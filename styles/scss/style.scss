@@ -1,0 +1,539 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+}
+.font-title{
+    padding-left: 5%;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 36px;
+    color: #060A24;
+    letter-spacing: 0;
+    line-height: 42px;
+    font-weight: 400;
+}
+.font-content{
+    padding-left: 5%;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 14px;
+    color: #060A24;
+    letter-spacing: 0;
+    line-height: 22px;
+    font-weight: 300;
+}
+.button-style{
+    border: none;
+    margin-left: 5%;
+    width: 90%;
+    height: 48px;
+    max-width: 400px;
+    background-color: #00F3BB;
+    .text-button{
+        font-family: 'IBM Plex Mono', medium;
+        text-transform: uppercase;
+        font-size: 16px;
+        text-align: center;
+        font-weight: 600;
+    }
+    &:hover{
+        cursor: pointer;
+        color: #FFFFFF;
+        background-image: linear-gradient(225deg, #0000FE 0%, #00F0B8 100%);
+    }
+}
+.header{
+    width: 100%;
+    height: 44px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    .logo-container{
+        width: 24px;
+        height: 24px;
+        margin-top: 10px;
+        margin-left: 5%;
+        margin-bottom: 10px;
+        .logo-img{
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .menu-select{
+        display: none;
+        &:checked{
+            & ~ .hamburguer-menu{
+                .open{
+                    display: none;
+                }
+                .close{
+                    display: block;
+                }
+            }
+            & ~ .menu-expanded-container{
+                display: flex;
+                z-index: 1;
+            }
+        }
+    }
+    .hamburguer-menu{
+        margin-top: 16px;
+        margin-right: 6%;
+        height: 14px;
+        cursor: pointer;
+        .open{
+            position: relative;
+            top: 5px;
+            width: 18px;
+            height: 2px;
+            background-color: black;
+            &::after, 
+            &::before{
+                position: absolute;
+                content: '';
+                width: 18px;
+                height: 2px;
+                background-color: black;
+            }
+            &::before{
+                top: -5px;
+            }
+            &::after{
+                top: 4.9px;
+            }
+        }
+        .close{
+            position: relative;
+            top: 6px;
+            width: 14px;
+            height: 2px;
+            background-color: black;
+            transform: rotate(45deg);
+            display: none;
+            &::after{
+                position: absolute;
+                content: '';
+                width: 14px;
+                height: 2px;
+                background-color: black;
+                transform: rotate(90deg);
+            }
+        }
+    }
+    .menu-expanded-container{
+        display: none;
+        flex-direction: column;
+        padding-left: 0;
+        width: 100%;
+        .menu-expanded-item{
+            padding: 12px 0px 12px 5%;
+            background-color: #0000EC;
+            font-size:16px;
+            text-transform: uppercase;
+            line-height: 28px;
+            color: white;
+            cursor: pointer;
+            &.episode{
+                padding-top: 16px;
+            }
+            &.topics{
+                padding-bottom: 24px;
+            }
+        }
+    }
+}
+.container-welcome{
+    .hello-title{
+        margin-top: 29px;
+        .decoration-word{ 
+            text-decoration: line-through;
+        }
+        .decoration-hello-title{
+            display: block;
+            .decoration-point{
+                margin-left: -5px;
+            }
+        }
+    }
+    .text-content-mobile{
+        margin: 16px 0 36px 0;
+        max-width: 450px;
+    }
+    .text-content-desktop{
+        display: none;
+    }
+}
+.container-episodes{
+    margin-top: 24px;
+    width: 100%;
+    height: 1230.5px;
+    background-image: linear-gradient(225deg, #0000FF 0%, #0000A3 100%);
+    clip-path: polygon(0 3%, 100% 0%, 100% 97%, 0% 100%);
+    .title-episode{
+        padding-top: 64px;
+        padding-bottom: 21px;
+        color: #FFFFFF;
+    }
+    .podcast-list{
+        .podcast{
+            margin: 10px auto;
+            width: 94%;
+            height: 232px; 
+            & iframe{
+                height: 100%;
+                line-height: 0;
+            }
+        }
+    }
+}
+.container-about-us{
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+        .container-phone-img{
+        margin: -95.5px auto 0 auto;
+        width: 100%;
+        height: 519px;
+        max-width: 457.6px;
+        .phone-img{
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .container-text-about-us{
+        margin-top: 27px;
+        margin-right: 16px;
+        .title-about-us{
+            margin-bottom: 8px;
+        }
+        .content-about-us{
+        }
+    }
+}
+.container-interviews{
+    margin-top: 54px;
+    .title-interviews{
+        margin-bottom: 16px;
+    }
+    .container-interviews-img{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+        .interviews-img{
+            width: 100%;
+            max-width: 320px;
+            height: 243px;
+        }
+    }
+}
+.container-topics{
+    margin-top: 48px;
+    .title-topics{
+        margin-bottom: 24px;
+    }
+    .container-topic-img{
+        margin-bottom: 36px;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        .topic-img{
+            
+        }
+        .subtitle-topic{
+            margin: auto;
+            padding: 0;
+            font-size: 24px;
+            font-weight: 600;
+            width: 288px;
+            line-height: 32px;
+            text-align: center;
+        }
+    }
+}
+.container-more-information{
+    margin-top: 6px;
+    width: 100%;
+    height: 341px;
+    background-image: linear-gradient(225deg, #0000FF 0%, #0000A3 100%);
+    clip-path: polygon(0 15%, 100% 0%, 100% 100%, 0% 100%);
+    .title-more-information{
+        margin: 0 auto 0 auto;
+        padding: 64px 0 36px 0;
+        width: 90%;
+        max-width: 320px;
+        text-align: center;
+        color: #FFFFFF;
+    }
+    .button-more-information{
+        width: 288px;
+        margin: auto;
+        .button-style{
+            width: 100%;
+            margin: 0;
+        }
+    }
+}
+.footer{
+    text-align: center;
+    .footer-text{
+        margin-top: 24px;
+        padding: 0;
+    }
+    .container-icons{
+        margin: 16px 14% 31px 14%;
+        .icon{
+            margin-right: 30px;
+            width: 16px;
+            height: 16px;
+        }
+        .icon-telegram{
+            margin: 0;
+        }
+
+    }
+}
+@media (min-width: 640px){
+    .button-style{
+        width: 226px;
+    }
+    .container-welcome{
+        .hello-title{
+            .decoration-hello-title{
+                display: inline;
+                .decoration-point{
+                    margin-left: -10px;
+                    color: #0000EC;
+                }
+            }
+        }
+        .text-content-mobile{
+            display: none;
+        }
+        .text-content-desktop{
+            display: block;
+            margin: 16px 0 36px 0;
+            max-width: 550px;
+        }
+    
+    }
+    .container-episodes{
+        margin-top: 5px;
+        height: 800px;
+        clip-path: polygon(0 7.5%, 100% 0%, 100% 92.5%, 0% 100%);
+        .title-episode{
+            padding-top: 100px;
+        }
+        .podcast-list{
+            display: flex;
+            flex-wrap: wrap;
+            .podcast{
+                width: 48%;
+                margin-bottom: 15px;
+            }
+        }
+    }
+    .container-about-us{
+        flex-wrap: nowrap;
+            .container-phone-img{
+            margin: -85px 0 0 7%;
+            height: 660px;
+        }
+        .container-text-about-us{
+            margin-left: 0;
+            width: 400px;
+            .title-about-us{
+                margin-bottom: 24px;
+                padding: 0;
+            }
+            .content-about-us{
+                max-width: 464px;
+                padding: 0;
+            }
+        }
+    }
+    .container-interviews{
+        .container-interviews-img{
+            .interviews-img{
+                width: 45%;
+                height: 364px;
+                object-fit: cover;
+            }
+        }
+    }
+    .container-topics{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        .title-topics{
+            width: 90%;
+        }
+        .container-topic-img{
+            width: 35%;
+            .topic-img{
+                margin: auto;
+            }
+            .subtitle-topic{
+                margin: auto;
+                width: 220px;
+            }
+        }
+    }
+}
+@media (min-width: 1220px){
+    .font-title{
+        padding-left: 14%;
+        font-size: 48px;
+        line-height: 64px;
+    }
+    .font-content{
+        padding-left: 14%;
+        font-size: 16px;
+    }
+    .button-style{
+        margin-left: 14%;
+        height: 56px;
+        .text-button{
+            font-size: 18px;
+            line-height: 24px;
+        }
+    }
+    .header{
+        height: 80px;
+        flex-wrap: nowrap;
+        .logo-container{
+            margin: 22px 0px 22px 100px;
+            width: 36px;
+            height: 36px;
+        }
+        .hamburguer-menu{
+            display: none;
+        }
+        .menu-expanded-container{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            width: auto;
+            .menu-expanded-item{
+                width: auto;
+                padding: 26px 24px;
+                background-color: white;
+                color: #060A24;
+                font-weight: 400;
+                &.episode{
+                    padding: 26px 24px;
+                }
+                &.topics{
+                    padding: 26px 100px 26px 24px;
+                }
+                &:hover{
+                    text-decoration: line-through;
+                    color: #00F3BB;
+                }
+                &:active{
+                    text-decoration: line-through;
+                    color: rgba(6,10,36,0.56);
+                }
+            }
+        }
+    }
+    .container-welcome{
+        .hello-title{
+            margin-top: 120px;
+            font-size: 64px;
+            line-height: 84px;
+        }
+        .text-content-desktop{
+            margin: 0;
+            padding-bottom: 56px;
+            font-size: 16px;
+            line-height: 24px;
+            max-width: 628px;
+        }
+    }
+    .container-episodes{
+        height: 1040px;
+        clip-path: polygon(0 15%, 100% 0%, 100% 85%, 0% 100%);
+        .title-episode{
+            padding: 186px 14% 26px 14%;
+        }
+        .podcast-list{
+            margin-left: 7%;
+            margin-right: 7%;
+            justify-content: space-between;
+            .podcast{
+                width: 47.5%;
+                margin: 0;
+                padding-bottom: 72px;
+            }
+        }
+    }
+    .container-about-us{
+            .container-phone-img{
+            margin: -168.6px 0 0 14%;
+        }
+        .container-text-about-us{
+            margin-top: 20.4px;
+            margin-left: 4.33%;
+            width: 464px;
+        }
+    }
+    .container-interviews{
+        margin-top: 64px;
+        .title-interviews{
+            margin-bottom: 36px;
+            width: 80%;
+        }
+        .container-interviews-img{
+            margin: 0;
+            .interviews-img{
+                width: 33.33%;
+                height: 364px;
+                max-width: 480px;
+            }
+        }
+    }
+    .container-topics{
+        margin-top: 64px;
+        .title-topics{
+            margin-bottom: 56px;
+            margin-left: 0;
+        }
+        .container-topic-img{
+            width: 18%;
+            margin-bottom: 0px;
+        }
+    }
+    .container-more-information{
+        margin-top: 34px;
+        height: 518px;
+        clip-path: polygon(0 30%, 100% 0%, 100% 100%, 0% 100%);
+        .title-more-information{
+            padding-top: 213px;
+            max-width: 692px;
+        }
+        .button-more-information{
+            width: 345px;
+        }
+    }
+    .footer{
+        height: 95px;
+        display: flex;
+        justify-content: space-between;
+        .footer-text{
+            margin: 0;
+            padding: 36px 0px 31px 7%;
+        }
+        .container-icons{
+            margin-top: 36px;
+            margin-right: 7%;
+            .icon{
+                margin-left: 36px;
+                margin-right: 0;
+                width: 16px;
+                height: 16px;
+            }
+        }
+    }
+}
